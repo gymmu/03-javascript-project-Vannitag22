@@ -36,7 +36,6 @@ export function aufgabe03 (args) {
   let count = 0
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-
     if (currentElement === "e") {
       count = count +1
       }
@@ -53,26 +52,14 @@ export function aufgabe03 (args) {
 
 export function aufgabe04 (args) {
   const input = args
-  const result = []
-  let count = 0
+  let count = 1
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-
-    if (currentElement === "" ) {
-      count = count +1
-      }
-    else if (currentElement === "" ) {
+    if (currentElement === " " ) { //Leerzeichen Zählen, weil ein Wort ist immer von Leerzeichen umgeben
       count = count +1
     }
-    else if (currentElement === "" ) {
-      count = count +1
-    }
-    else {
-      result.push(currentElement)
-    }  
-    
   }
-  return count //result.join("") wäre ganze Liste zurücksetzen, hier aber nur Zähler
+  return count 
 }
 
 export function aufgabe05 (args) {
@@ -113,7 +100,7 @@ export function aufgabe08(args) {
     const currentElement = input[i]
 
     if (currentElement === "e") {
-      currentElement === currentElement //ersetze 'e' mit '3'
+      result.pusch(3)
       }
    
     else {
