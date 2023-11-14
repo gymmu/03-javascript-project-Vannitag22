@@ -33,23 +33,46 @@ export function aufgabe02 (args) {
 export function aufgabe03 (args) {
   const input = args
   const result = []
+  let count = 0
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-// irgendwie anders machen, Zähler hinzufügen?
-
     if (currentElement === "e") {
-      String.length.count(currentElement === "e")
+      count = count +1
       }
     else if (currentElement === "E") {
-      String.length.count(currentElement === "E")
+      count = count +1
     }
     else {
       result.push(currentElement)
     }  
     
   }
-  return result.join("")
+  return count //result.join("") wäre ganze Liste zurücksetzen, hier aber nur Zähler
+}
+
+export function aufgabe04 (args) {
+  const input = args
+  const result = []
+  let count = 0
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (currentElement === "" ) {
+      count = count +1
+      }
+    else if (currentElement === "" ) {
+      count = count +1
+    }
+    else if (currentElement === "" ) {
+      count = count +1
+    }
+    else {
+      result.push(currentElement)
+    }  
+    
+  }
+  return count //result.join("") wäre ganze Liste zurücksetzen, hier aber nur Zähler
 }
 
 export function aufgabe05 (args) {
@@ -65,6 +88,24 @@ export function aufgabe05 (args) {
   return result.join("")
 }
 
+export function aufgabe07 (args) {
+  const input = args
+  const result = []
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+  
+  if (currentElement = "und") {
+   //weglassen
+  }
+  
+  else {
+    result.push(currentElement)
+  }
+}
+
+  return result.join("")
+}
+
 export function aufgabe08(args) {
   const input = args
   const result = []
@@ -72,7 +113,7 @@ export function aufgabe08(args) {
     const currentElement = input[i]
 
     if (currentElement === "e") {
-      currentElement === "3" //ersetze 'e' mit '3'
+      currentElement === currentElement //ersetze 'e' mit '3'
       }
    
     else {
