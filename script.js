@@ -103,7 +103,7 @@ for (let i = 0; i < input.length; i++) {
   
   if (currentElement === "u") { //currentElement ist ein Buchstabe, kann also nicht mehrere Buchstaben (ein Wort) sein
     if (input[i+1] === "n") { //input[i] = aktuelle Position/Zeichen
-      if (input[i+2] === "d") //input[i+x] =das Zeichen x weiter als [i] 
+      if (input[i+2] === "d") //input[i+x] = das Zeichen x weiter als [i] 
       return true
     }
   }
@@ -128,4 +128,26 @@ export function aufgabe08(args) {
   
   }
   return result.join("")
+}
+
+export function aufgabe10 (args) {
+  const input = args
+  
+  if (input.length !== 7) return false // ! = wenn das nicht der fall ist; / weil Hexcode hat 7 Zeichen Bsp unten
+  if (input[0] !== "#") return false // # -> ist ein Hexcode --> bsp #OAB2FF (hier: OA=rot, B2=grün, FF=blau)
+
+  for (let i = 1; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+
+    if ( 48 <= ascii && ascii <= 57) {
+      // ist eine Ziffer
+    } else if ( 65 <= ascii && ascii <= 70) {
+       //ist A-F
+    } else {
+    return false
+    }
+  }
+
+return true
 }
