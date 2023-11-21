@@ -68,12 +68,18 @@ export function aufgabe05 (args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-   
-    result.push(currentElement.toLowerCase()) // toLowerCase --> alle Buchstaben klein
+    if (currentElement === " ") {
+
+    } else if (currentElement === ".") {
+
+    }
+    else if (currentElement === currentElement.toUpperCase()) {
+      return true
+    }
     
   }
 
-  return result.join("")
+  return false
 }
 
 export function aufgabe07 (args) {
