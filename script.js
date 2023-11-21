@@ -68,6 +68,7 @@ export function aufgabe05 (args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
+   
     result.push(currentElement.toLowerCase()) // toLowerCase --> alle Buchstaben klein
     
   }
@@ -81,16 +82,15 @@ export function aufgabe07 (args) {
 for (let i = 0; i < input.length; i++) {
   const currentElement = input[i]
   
-  if (currentElement = "und") {
-   //weglassen
-  }
-  
-  else {
-    result.push(currentElement)
+  if (currentElement === "u") { //currentElement ist ein Buchstabe, kann also nicht mehrere Buchstaben (ein Wort) sein
+    if (input[i+1] === "n") { //input[i] = aktuelle Position/Zeichen
+      if (input[i+2] === "d") //input[i+x] =das Zeichen x weiter als [i] 
+      return true
+    }
   }
 }
 
-  return result.join("")
+  return false
 }
 
 export function aufgabe08(args) {
@@ -100,7 +100,7 @@ export function aufgabe08(args) {
     const currentElement = input[i]
 
     if (currentElement === "e") {
-      result.pusch(3)
+      result.push(3)
       }
    
     else {
