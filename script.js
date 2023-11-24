@@ -107,6 +107,7 @@ for (let i = 0; i < input.length; i++) {
       return true
     }
   }
+  
 }
 
   return false
@@ -128,6 +129,22 @@ export function aufgabe08(args) {
   
   }
   return result.join("")
+}
+
+
+export function aufgabe09 (args) {
+  const input = args
+  const result = []
+  let length = 0
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    length++
+  }
+  if (length === 6 ){
+    return true
+  } else { // man könnte noch (length !== 6) hinschreiben, bringt aber nicht mehr (und auf webseite verschwinden die aufgaben)
+     return false
+  }
 }
 
 export function aufgabe10 (args) {
