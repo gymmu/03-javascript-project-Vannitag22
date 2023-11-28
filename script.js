@@ -215,15 +215,33 @@ export function aufgabe13 (args) {
 
 export function aufgabe14 (args) {
   const input = args
-  const result = []
+  let pos = -1
+  let countE = 0
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     
     if (currentElement === "e"){
-      return i
+      countE++ // um 1 hochzählen
+    if (countE === 3) //wenn es bei 3 angelangt
+      pos = i        // position des 3.E zurückgeben
     }
   }
 
+  return pos // oder -1
+}
+
+export function aufgabe15 (args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    
+    if (currentElement === " "){ //sobald ein' ' kommt-> gebe das, was du bis jetzt eingelesen hast
+      return result.join("") //result=bis dort wo es eingelesen wurde
+    }
+
+    result.push(currentElement)
+  }
   
-  return -1
+  return result.join("")
 }
