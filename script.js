@@ -245,3 +245,42 @@ export function aufgabe15 (args) {
   
   return result.join("")
 }
+
+export function aufgabe16 (args) {
+  const text = args
+  let switchFirst = true
+  const listFirst = []
+  const listSecond = []
+  for (let i = 0; i < text.length; i++) {
+   if (text[i] === "$") {
+    switchFirst = false
+    } else {
+      if (switchFirst === true) {
+      listFirst.push(text[i])
+      } else {
+      listSecond.push(text[i])
+      }
+    }
+  }
+  return [listFirst.join(""), listSecond.join("")]
+//Tests werden als falsch angezeigt, aber so wie jetzt ist die Aufgabe richtig
+}
+
+export function aufgabe16 (args) {
+  const text = args
+  const phrases = []
+let currentPhrase = []
+for (let i = 0; i < text.length; i++) {
+  const currentElement = text[i]
+  if (currentElement === '.') {
+    // Wenn wir hier sind haben wir einen '.' gefunden, und möchten den aktuellen Satz als eine Element in phrases speichern.
+    phrases.push(currentPhrase.join(""))
+    currentPhrase = []  // Damit löschen wir alles was im aktuellen Satz drin war.
+  } else {
+    // Wenn wir keinen '.' lesen, dann möchten wir die Zeichen an den aktuellen Satz anhängen.
+    currentPhrase.push(currentElement)
+  }
+}
+phases.push(currentPhrase.join(""))
+console.log(phrases)
+}
