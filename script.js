@@ -335,3 +335,15 @@ for (let i = 0; i < input.length; i++) {
 
 return false
 }
+
+export function aufgabe21 (args) {
+  const input = args
+  const result = []
+  for (let i = input.length-1; i >= 0; i--) { //input.length-1 letzte position; Zählrichtung umdrehen
+    const currentElement = input[i]
+  
+    result.push(currentElement) //die Zeichen werden in umgekehrter Reihenfolge geschrieben
+  }
+
+  return result.join("")
+}
