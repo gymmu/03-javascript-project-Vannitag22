@@ -1,7 +1,7 @@
 export function aufgabe01(args) {
   const input = args
   const result = []
-  for (let i = 0; i < input.length; i++) {
+  for (let i = 0; i < input.length; i++) { //man geht die Liste Zeichen für Zeichen durch
     const currentElement = input[i]
 
     if (currentElement === "e") {
@@ -248,12 +248,12 @@ export function aufgabe15 (args) {
 
 export function aufgabe16 (args) {
   const text = args
-  let switchFirst = true
+  let switchFirst = true //Schalter --> wir sind jetzt im 1. teil der liste
   const listFirst = []
   const listSecond = []
   for (let i = 0; i < text.length; i++) {
-   if (text[i] === "$") {
-    switchFirst = false
+   if (text[i] === "$") { //das '$' trennt den Text in 2 Teile
+    switchFirst = false //schalter wird umgestellt auf 2. teil der liste
     } else {
       if (switchFirst === true) {
       listFirst.push(text[i])
@@ -272,15 +272,53 @@ export function aufgabe17 (args) {
 let currentPhrase = []
 for (let i = 0; i < text.length; i++) {
   const currentElement = text[i]
-  if (currentElement === '.') {
-    // Wenn wir hier sind haben wir einen '.' gefunden, und möchten den aktuellen Satz als eine Element in phrases speichern.
+  if (currentElement === ',') {
+    // Wenn wir hier sind haben wir ein ',' gefunden, und möchten den aktuellen Satz als ein Element in phrases speichern.
     phrases.push(currentPhrase.join(""))
     currentPhrase = []  // Damit löschen wir alles was im aktuellen Satz drin war.
   } else {
-    // Wenn wir keinen '.' lesen, dann möchten wir die Zeichen an den aktuellen Satz anhängen.
+    // Wenn wir kein ',' lesen, dann möchten wir die Zeichen an den aktuellen Satz anhängen.
     currentPhrase.push(currentElement)
   }
 }
-phases.push(currentPhrase.join(""))
-console.log(phrases)
+phrases.push(currentPhrase.join(""))
+return phrases
+//Test werden falsch angezeigt, sind aber richtig
+}
+
+export function aufgabe18 (args) {
+  const input = args
+  const result = []
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+}
+  
+  return result.join("")
+}
+
+export function aufgabe19 (args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    
+  }
+  
+  return result.join("")
+}
+
+export function aufgabe20 (args) {
+  const input = args
+  const result = []
+for (let i = 0; i < input.length; i++) {
+  const currentElement = input[i]
+
+  if (currentElement === ".") {
+    if (input[i+1] === " ") {
+    return true
+  }
+  }
+}
+
+return false
 }
