@@ -11,7 +11,7 @@ export function aufgabe01(args) {
       //mache nichts
     }
     else {
-      result.push(currentElement)
+      result.push(currentElement) //daêr text wird ohne die 'e's gepuscht (weil Befehl oben-->nichts machen mit den 'e')
     }
   
   }
@@ -24,7 +24,7 @@ export function aufgabe02 (args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-      result.push(currentElement.toUpperCase()) //toUpperCase --> alles gross
+      result.push(currentElement.toUpperCase()) //toUpperCase --> alles gross -->der Text wird in Grossbuchstaben angezeigt
         
   }
   return result.join("")
@@ -37,29 +37,29 @@ export function aufgabe03 (args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === "e") {
-      count = count +1
+      count = count +1 //wenn es ein 'e' liesst, dann soll der Zähler um 1 hochgehen
       }
     else if (currentElement === "E") {
-      count = count +1
+      count = count +1 //wenn es ein 'E' liesst, dann soll der Zähler um 1 hochgehen
     }
     else {
       result.push(currentElement)
     }  
-    
+    //es wird gezählt, wie viele 'e' und 'E' vorkommen
   }
   return count //result.join("") wäre ganze Liste zurücksetzen, hier aber nur Zähler
 }
 
 export function aufgabe04 (args) {
   const input = args
-  let count = 1
+  let count = 1 //den Zähler von 1 starten lasse, weil wenn von 0 starten, dann wäre ein "Wort" zu wenig (-->es ist immer 1 Leerzeichen weniger als die Anz. Worte)
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     if (currentElement === " " ) { //Leerzeichen Zählen, weil ein Wort ist immer von Leerzeichen umgeben
       count = count +1
     }
   }
-  return count 
+  return count //--> soll den Zähler zurückgeben
 }
 
 export function aufgabe05 (args) {
@@ -74,12 +74,12 @@ export function aufgabe05 (args) {
 
     }
     else if (currentElement === currentElement.toUpperCase()) {
-      return true
+      return true //wenn es ein Grossbuchstabe ist, ist die Funktion richtig
     }
     
   }
 
-  return false
+  return false //ist falsch, weil wenn kein Grossbuchstabe vorhanden ist, kommt es nicht in die obere Schleife, somit ist die Funktion falsch
 }
 
 export function aufgabe06 (args) {
@@ -89,7 +89,7 @@ export function aufgabe06 (args) {
     const currentElement = input[i]
     
     if (currentElement === ".") {
-      return true
+      return true //wenn ein Punkt vorkommt, ist die Funktion richtig
     }
   }
   return false
@@ -101,7 +101,7 @@ export function aufgabe07 (args) {
 for (let i = 0; i < input.length; i++) {
   const currentElement = input[i]
   
-  if (currentElement === "u") { //currentElement ist ein Buchstabe, kann also nicht mehrere Buchstaben (ein Wort) sein
+  if (currentElement === "u") { //currentElement ist ein Buchstabe, kann also nicht mehrere Buchstaben (ein Wort, bsp: und) sein--> deswegen eine "Auflistung", die das Wort ergibt
     if (input[i+1] === "n") { //input[i] = aktuelle Position/Zeichen
       if (input[i+2] === "d") //input[i+x] = das Zeichen x weiter als [i] 
       return true
@@ -120,7 +120,7 @@ export function aufgabe08(args) {
     const currentElement = input[i]
 
     if (currentElement === "e") {
-      result.push(3)
+      result.push(3) //soll das 'e' durch '3' ersetzen
       }
    
     else {
@@ -137,11 +137,11 @@ export function aufgabe09 (args) {
   let length = 0
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    length++
+    length++ //für jedes Zeichen, geht der Zähler um 1 hoch --> Zählt die Zeichen
   }
   if (length === 6 ){
-    return true
-  } else { // man könnte noch (length !== 6) hinschreiben, bringt aber nicht mehr (und auf webseite verschwinden die aufgaben)
+    return true // wenn die Zeichenkette 6 Zeichen lang ist, dann ist die Funktion richtig
+  } else { // man könnte noch (length !== 6 (--> wenn es nicht 6 Zeichen lang ist)) hinschreiben, bringt aber nicht mehr (und auf webseite verschwinden die aufgaben)
      return false
   }
 }
@@ -171,12 +171,12 @@ return true
 export function aufgabe11 (args) {
   const input = args
 
-  if (input.length !== 1) return null 
+  if (input.length !== 1) return null //-->weil dann zu viele Zeichen--> braucht nur 1 Zeichen
   
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     const ascii = currentElement.charCodeAt(0)
-    return ascii //gibt Wert zurück
+    return ascii //gibt den asciiWert des Zeichens zurück
 
   }
   
@@ -191,9 +191,9 @@ export function aufgabe12 (args) {
     const currentElement = input[i]
     
     if (currentElement === "e" ){
-      return position
+      return position //--> gibt die Position zurück, an der das erste 'e' steht
     }
-    position++
+    position++ //zählt die Position hoch
   }
 
   return -1
@@ -206,7 +206,7 @@ export function aufgabe13 (args) {
     const currentElement = input[i]
     
     if (currentElement === "e" ){
-      return i
+      return i //i ist die Position des currentElement
     }
   }
 
@@ -266,7 +266,7 @@ export function aufgabe16 (args) {
 //Tests werden als falsch angezeigt, aber so wie jetzt ist die Aufgabe richtig
 }
 
-export function aufgabe16 (args) {
+export function aufgabe17 (args) {
   const text = args
   const phrases = []
 let currentPhrase = []
