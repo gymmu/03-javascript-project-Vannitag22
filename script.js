@@ -287,13 +287,25 @@ return phrases
 }
 
 export function aufgabe18 (args) {
-  const input = args
-  const result = []
-for (let i = 0; i < input.length; i++) {
-  const currentElement = input[i]
-}
+  const text = args
+  let switchFirst = true //Schalter --> wir sind jetzt im 1. teil der liste
+  const listFirst = []
+  const listSecond = []
+  for (let i = 0; i < text.length; i++) {
+   if (text[i] === " ") { //das erste ' ' trennt den Text in 2 Teile
+    switchFirst = false //schalter wird umgestellt auf 2. teil der liste
+    } else {
+      if (switchFirst === true) {
+      listFirst.push(text[i])
+      } else {
+      listSecond.push(text[i])
+      }
+    }
+  }
+  const name = listFirst.join("") //join macht das wieder zu einer Zeichenkette
+  const age = listSecond.join("") //der 1. Teil der Liste heisst 'name' und der 2. Teil heisst 'age'
   
-  return result.join("")
+  return "Sie heissen " + name + " und sind " + age + " Jahre alt" //Die Listen in 'name' und 'age' einsetzten
 }
 
 export function aufgabe19 (args) {
@@ -301,7 +313,8 @@ export function aufgabe19 (args) {
   const result = []
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    
+   result.push(currentElement)
+   result.push(currentElement) //es wird 2mal hingeschrieben --> die einzelnen Zeichen doppelt hingeschrieben
   }
   
   return result.join("")
