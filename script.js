@@ -1,4 +1,4 @@
-export function aufgabe01(args) {
+export function aufgabe01(args) { //keine 'e' pushen
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) { //man geht die Liste Zeichen für Zeichen durch
@@ -18,7 +18,7 @@ export function aufgabe01(args) {
   return result.join("")
 }
 
-export function aufgabe02 (args) {
+export function aufgabe02 (args) { //alles in Grossbuchstaben
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
@@ -30,7 +30,7 @@ export function aufgabe02 (args) {
   return result.join("")
 }
 
-export function aufgabe03 (args) {
+export function aufgabe03 (args) { //'e's und 'E's zählen
   const input = args
   const result = []
   let count = 0
@@ -50,7 +50,7 @@ export function aufgabe03 (args) {
   return count //result.join("") wäre ganze Liste zurücksetzen, hier aber nur Zähler
 }
 
-export function aufgabe04 (args) {
+export function aufgabe04 (args) { //Wörter (->Leerzeichen) zählen
   const input = args
   let count = 1 //den Zähler von 1 starten lasse, weil wenn von 0 starten, dann wäre ein "Wort" zu wenig (-->es ist immer 1 Leerzeichen weniger als die Anz. Worte)
   for (let i = 0; i < input.length; i++) {
@@ -62,7 +62,7 @@ export function aufgabe04 (args) {
   return count //--> soll den Zähler zurückgeben
 }
 
-export function aufgabe05 (args) {
+export function aufgabe05 (args) { //testen ob ein Grossbuchstabe vorhanden ist
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
@@ -82,7 +82,7 @@ export function aufgabe05 (args) {
   return false //ist falsch, weil wenn kein Grossbuchstabe vorhanden ist, kommt es nicht in die obere Schleife, somit ist die Funktion falsch
 }
 
-export function aufgabe06 (args) {
+export function aufgabe06 (args) { //testen ob ein Sonderzeichen (->Punkt) vorhanden ist
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
@@ -95,7 +95,7 @@ export function aufgabe06 (args) {
   return false
 }
 
-export function aufgabe07 (args) {
+export function aufgabe07 (args) { //testen ob 'und' vorhanden ist
   const input = args
   const result = []
 for (let i = 0; i < input.length; i++) {
@@ -113,7 +113,7 @@ for (let i = 0; i < input.length; i++) {
   return false
 }
 
-export function aufgabe08(args) {
+export function aufgabe08(args) { //'e' durch '3' ersetzen
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
@@ -131,7 +131,7 @@ export function aufgabe08(args) {
   return result.join("")
 }
 
-export function aufgabe09 (args) {
+export function aufgabe09 (args) { //testen ob die Eingabe sechs Zeichen lang ist
   const input = args
   const result = []
   let length = 0
@@ -146,7 +146,7 @@ export function aufgabe09 (args) {
   }
 }
 
-export function aufgabe10 (args) {
+export function aufgabe10 (args) { //testen ob die Eingabe ein korrekter RGB Hexcode ist.
   const input = args
   
   if (input.length !== 7) return false // ! = wenn das nicht der fall ist; / weil Hexcode hat 7 Zeichen Bsp unten
@@ -168,7 +168,7 @@ export function aufgabe10 (args) {
 return true
 }
 
-export function aufgabe11 (args) {
+export function aufgabe11 (args) { //den asciiWert eines einzelnen Zeichens angeben
   const input = args
 
   if (input.length !== 1) return null //-->weil dann zu viele Zeichen--> braucht nur 1 Zeichen
@@ -183,7 +183,7 @@ export function aufgabe11 (args) {
   return null
 }
 
-export function aufgabe12 (args) {
+export function aufgabe12 (args) { //Position des 1. 'e' angeben
   const input = args
   const result = []
   let position = 0
@@ -199,7 +199,7 @@ export function aufgabe12 (args) {
   return -1
 }
 
-export function aufgabe13 (args) {
+export function aufgabe13 (args) { //Position des letzten 'e' angeben
   const input = args
   const result = []
   for (let i = input.length-1; i >= 0; i--) { //input.length-1 letzte position; Zählrichtung umdrehen
@@ -213,7 +213,7 @@ export function aufgabe13 (args) {
   return -1
 }
 
-export function aufgabe14 (args) {
+export function aufgabe14 (args) { //Position des 3. 'e' angeben
   const input = args
   let pos = -1
   let countE = 0
@@ -230,7 +230,8 @@ export function aufgabe14 (args) {
   return pos // oder -1
 }
 
-export function aufgabe15 (args) {
+export function aufgabe15 (args) { //die Eingabe bis zum ersten ' ' zurückgeben
+
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
@@ -246,7 +247,8 @@ export function aufgabe15 (args) {
   return result.join("")
 }
 
-export function aufgabe16 (args) {
+export function aufgabe16 (args) { //die Eingabe bis zum '$' als 1. Teil der Liste einlesen, und den Rest als den 2. Teil
+  
   const text = args
   let switchFirst = true //Schalter --> wir sind jetzt im 1. teil der liste
   const listFirst = []
@@ -266,7 +268,7 @@ export function aufgabe16 (args) {
 //Tests werden als falsch angezeigt, aber so wie jetzt ist die Aufgabe richtig
 }
 
-export function aufgabe17 (args) {
+export function aufgabe17 (args) { //die Eingabe wird mit einem ',' getrennt --> als 1. Teil der Liste einlesen, Rest als 2. Teil
   const text = args
   const phrases = []
 let currentPhrase = []
@@ -286,7 +288,7 @@ return phrases
 //Test werden falsch angezeigt, sind aber richtig
 }
 
-export function aufgabe18 (args) {
+export function aufgabe18 (args) { //Sie heissen `name` und sind `age` Jahre alt, `name` und `alter` durch Eingaben ersetzen
   const text = args
   let switchFirst = true //Schalter --> wir sind jetzt im 1. teil der liste
   const listFirst = []
@@ -308,7 +310,7 @@ export function aufgabe18 (args) {
   return "Sie heissen " + name + " und sind " + age + " Jahre alt" //Die Listen in 'name' und 'age' einsetzten
 }
 
-export function aufgabe19 (args) {
+export function aufgabe19 (args) { //die Zeichen verdoppeln
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
@@ -320,7 +322,7 @@ export function aufgabe19 (args) {
   return result.join("")
 }
 
-export function aufgabe20 (args) {
+export function aufgabe20 (args) { //testen ob nach jedem '.' ein ' ' steht
   const input = args
   const result = []
 for (let i = 0; i < input.length; i++) {
@@ -336,7 +338,7 @@ for (let i = 0; i < input.length; i++) {
 return false
 }
 
-export function aufgabe21 (args) {
+export function aufgabe21 (args) { //die Eingabe umgekehrt hinschreiben
   const input = args
   const result = []
   for (let i = input.length-1; i >= 0; i--) { //input.length-1 letzte position; Zählrichtung umdrehen --> von hinten nach vorne einlesen
@@ -348,7 +350,7 @@ export function aufgabe21 (args) {
   return result.join("")
 }
 
-export function aufgabe22 (args) {
+export function aufgabe22 (args) { //Zeichen bis 'k' (1.Teil der Liste) durch '_' ersetzen
   const input = args
   const result = []
   let switchFirst = true
