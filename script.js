@@ -11,7 +11,7 @@ export function aufgabe01(args) {
       //mache nichts
     }
     else {
-      result.push(currentElement) //daêr text wird ohne die 'e's gepuscht (weil Befehl oben-->nichts machen mit den 'e')
+      result.push(currentElement) //der text wird ohne die 'e's gepuscht (weil Befehl oben-->nichts machen mit den 'e')
     }
   
   }
@@ -236,7 +236,7 @@ export function aufgabe15 (args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     
-    if (currentElement === " "){ //sobald ein' ' kommt-> gebe das, was du bis jetzt eingelesen hast
+    if (currentElement === " "){ //sobald ein ' ' kommt-> gebe das, was du bis jetzt eingelesen hast
       return result.join("") //result=bis dort wo es eingelesen wurde
     }
 
@@ -255,10 +255,10 @@ export function aufgabe16 (args) {
    if (text[i] === "$") { //das '$' trennt den Text in 2 Teile
     switchFirst = false //schalter wird umgestellt auf 2. teil der liste
     } else {
-      if (switchFirst === true) {
-      listFirst.push(text[i])
-      } else {
-      listSecond.push(text[i])
+      if (switchFirst === true) { //wenn es in der 1. liste ist
+      listFirst.push(text[i]) //die 1. Liste pushen
+      } else { //wenn es in der 2. liste ist (also nicht in der 1. liste)
+      listSecond.push(text[i]) //die 2. Liste pushen
       }
     }
   }
@@ -339,11 +339,31 @@ return false
 export function aufgabe21 (args) {
   const input = args
   const result = []
-  for (let i = input.length-1; i >= 0; i--) { //input.length-1 letzte position; Zählrichtung umdrehen
+  for (let i = input.length-1; i >= 0; i--) { //input.length-1 letzte position; Zählrichtung umdrehen --> von hinten nach vorne einlesen
     const currentElement = input[i]
   
     result.push(currentElement) //die Zeichen werden in umgekehrter Reihenfolge geschrieben
   }
 
+  return result.join("")
+}
+
+export function aufgabe22 (args) {
+  const input = args
+  const result = []
+  let switchFirst = true
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "k") { //sobald ein 'k' kommt
+        switchFirst = false //lege den schalter um
+    }
+
+    if (switchFirst === true) { //bevor ein 'k' kommt
+      result.push("_") // ersetze alles durch'_'
+    } else { //nachdem ein 'k' kommt
+      result.push(currentElement) //pushe den Text normal
+    }
+  }
+  
   return result.join("")
 }
