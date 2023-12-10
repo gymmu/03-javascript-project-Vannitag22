@@ -24,7 +24,7 @@ export function aufgabe02 (args) { //alles in Grossbuchstaben
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-      result.push(currentElement.toUpperCase()) //toUpperCase --> alles gross -->der Text wird in Grossbuchstaben angezeigt
+      result.push(currentElement.toUpperCase()) //toUpperCase-->alles gross-->der Text wird in Grossbuchstaben angezeigt
         
   }
   return result.join("")
@@ -329,7 +329,7 @@ for (let i = 0; i < input.length; i++) {
   const currentElement = input[i]
 
   if (currentElement === ".") {
-    if (input[i+1] === " ") {
+    if (input[i+1] === " ") { //das folgende Zeichen ist ein ' '
     return true
   }
   }
@@ -344,7 +344,7 @@ export function aufgabe21 (args) { //die Eingabe umgekehrt hinschreiben
   for (let i = input.length-1; i >= 0; i--) { //input.length-1 letzte position; Zählrichtung umdrehen --> von hinten nach vorne einlesen
     const currentElement = input[i]
   
-    result.push(currentElement) //die Zeichen werden in umgekehrter Reihenfolge geschrieben
+    result.push(currentElement) //die Zeichen werden in umgekehrter Reihenfolge geschrieben, weil oben rückwärts gelesen wird
   }
 
   return result.join("")
