@@ -369,3 +369,82 @@ export function aufgabe22 (args) { //Zeichen bis 'k' (1.Teil der Liste) durch '_
   
   return result.join("")
 }
+
+export function aufgabe23 (args) { //erstes Zeichen zusätzlich nochmal vorne und hinten hinzufügen
+  const input = args
+  const result = []
+
+  const firstElement = input[0]//input[0] = 1. Zeichen im Text
+
+  result.push(firstElement) //nur 1. Zeichen pushen
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+  
+    result.push(currentElement) //alle Zeichen (inkl. 1. Zeichen) pushen --> 1. Zeichen wird 2x gepusht
+  }
+
+  result.push(firstElement) //nochmal 1. Zeichen pushen--> wird hinten angehängt
+  
+  return result.join("")
+}
+
+export function aufgabe24 (args) { // 1. und letztes Zeichen vertauschen
+  const input = args
+  const result = []
+
+  if (input.length === 1) return input //wenn der Text nur 1 Zeichen lang ist, dann den Text normal pushen, weil das Zeichen gleichzeitig 1. & letztes Zeichen
+
+  const firstElement = input[0] //input[0] = 1. Zeichen im Text
+  const lastElement = input[input.length - 1] //input[input.length - 1] = letzte Zeichen im Text
+
+  result.push(lastElement) //zuerst das letzte Zeichen pushen
+
+  for (let i = 1; i < input.length - 1; i++) { //i = 1, weil 1. Zeichen auslassen; input.length - 1, weil letztes Zeichen auslassen
+    const currentElement = input[i]
+    result.push(currentElement) //alle Zeichen (ohne 1. und letztes Zeichen) pushen
+  }
+  result.push(firstElement) //erst nach der Schleife (den Text von links nach rechts ohne 1.&letztes Zeichen pushen) das 1. Zeichen pushen
+
+  return result.join("")
+}
+
+export function aufgabe25 (args) {
+  const input = args
+  const result = []
+
+  const even = input.length % 2 === 0 //true, wenn die Länge durch 2 teilbar sind; % --> Rest, wenn Rest = 0, dann ducrh 2 teilbar --> gerade (even)
+
+  const middleElement = input[Math.floor(input.length / 2)] //input[Math.floor(input.length / 2)] = Länge das Textes durch 2 teilen --> mittlere Position des Textes 
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    
+    if (currentElement === middleElement) {
+      //auslassen
+    } else if (input.length === even) {
+      //noch eingeben
+    }
+    else result.push(currentElement)
+  }
+
+  return result.join("")
+}
+
+export function bubbleSort (args) {
+  const text = args
+const list = text.split("") // Text in Liste umwandeln, damit Elemente vertaschen möglich
+for (let i = 0; i < list.length - 1; i++) {
+  const currentElement = list[i]
+  const nextElement = list[i + 1]
+  if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+    // Reihenfolge stimmt nicht --> Elemente tauschen
+    const tmp = list[i + 1]
+    list[i + 1] = list[i]
+    list[i] = tmp
+    i = -1 // wenn etwas vertauscht, dann wieder von vorne starten
+  }
+}
+const result = list.join("")
+return result
+}
