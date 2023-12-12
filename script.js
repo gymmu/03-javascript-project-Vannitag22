@@ -409,11 +409,11 @@ export function aufgabe24 (args) { // 1. und letztes Zeichen vertauschen
   return result.join("")
 }
 
-export function aufgabe25 (args) {
+export function aufgabe25 (args) { //mittlere Zeichen entfernen
   const input = args
   const result = []
 
-  const even = input.length % 2 === 0 //true, wenn die Länge durch 2 teilbar sind; % --> Rest, wenn Rest = 0, dann ducrh 2 teilbar --> gerade (even)
+  //const even = input.length % 2 === 0 //true, wenn die Länge durch 2 teilbar sind; % --> Rest, wenn Rest = 0, dann ducrh 2 teilbar --> gerade (even)
 
   const middleElement = input[Math.floor(input.length / 2)] //input[Math.floor(input.length / 2)] = Länge das Textes durch 2 teilen --> mittlere Position des Textes 
 
@@ -421,12 +421,11 @@ export function aufgabe25 (args) {
     const currentElement = input[i]
     
     if (currentElement === middleElement) {
-      //auslassen
-    } else if (input.length === even) {
-      //noch eingeben
+      //mittleres Zeichen nicht pushen  
     }
-    else result.push(currentElement)
-  }
+    else result.push(currentElement) 
+    }
+  
 
   return result.join("")
 }
