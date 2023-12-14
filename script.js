@@ -426,9 +426,28 @@ export function aufgabe25 (args) { //mittlere Zeichen entfernen
     else result.push(currentElement) 
     }
   
-
+// Ich habe es nicht geschafft, dass es bei einer geraden Zeichenanzahl beide mittlere Zeichen entfernt.
   return result.join("")
 }
+
+export function aufgabe27 (args) { //Testen ob Eingabe eine Zahl ist
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt(0)
+
+    if (48<= ascii && ascii <= 57) { //ist eine Zahl
+      return true
+     }
+    
+  }
+  return false
+
+// sollte glaube ich eigentlich richtig sein, aber bei Test steht "expectet true to equal false"
+}
+
 
 export function bubbleSort (args) {
   const text = args
